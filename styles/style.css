@@ -1,0 +1,72 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+*, *::after, *::before {
+  box-sizing:border-box;  
+}
+
+button, summary {
+	cursor: pointer;
+}
+
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text:#111;
+	--color-background:#eee;
+}
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+/* jouw code */
+
+nav {
+	width: 100%;
+}
+
+nav:first-of-type{
+	display: flex;
+}
+
+nav:first-of-type ul {
+	list-style-type: none;
+	margin: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+}
+
+nav:first-of-type ul {
+		width: 80%;
+}
+
+nav:first-of-type ul li {
+	padding: 0em;
+}
+
+nav:first-of-type ul li img {
+	width: 2.2em;
+	margin: 0.2em;
+}
+
+nav:first-of-type img {
+	width: 20%;
+}
+
+nav:last-of-type ul {
+	list-style-type: none;
+	margin: auto;
+	display: inline-flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
+}
