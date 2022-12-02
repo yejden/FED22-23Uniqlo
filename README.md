@@ -102,13 +102,11 @@ Home pagina
   <summary>uitwerken na afloop 2e werkgroep</summary>
 
   ### de hele pagina: 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/fullpagehome.jpg" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/fullpagemen.jpg" width="375px" alt="breakdown van de hele pagina">
 
   ### dynamisch deel (bijv menu): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van een dynamisch deel">
-
-  ### wellicht nog een dynamisch deel (bijv filter): 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="breakdown van nog een dynamisch deel">
+  <img src="readme-images/menu.png" width="375px" alt="breakdown van een dynamisch deel">
 
 </details>
 
@@ -122,8 +120,7 @@ Home pagina
   <summary>uitwerken voor 1e voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
+  Er moet nog veel gebeuren, te lang bezig geweest met de carousel en had beter door kunnen gaan.
 
   ### Agenda voor meeting
   samen met je groepje opstellen
@@ -138,10 +135,12 @@ Home pagina
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
-  - punt 2
-  - nog een punt
-  - ...
+  - punt 1: Tip om niet teveel bij de carousel te blijven, de website die je nou bouwt
+  heeft een ingewikkelde slider die je voor jezelf kan versimpelen. Officiele website heeft een slider dat links en recht gaat
+  dat weer in een andere slider zit die verticaal naar boven en beneden gaat. Tip was om dat dus alleen maar horizontaal te laten
+  en de verticale eruit te laten.
+  - punt 2: Niet te lang vast blijven zitten bij een onderdeel en te moeilijk maken voor jezelf.
+  - <img src="readme-images/voortgang1.jpg" width="375px" alt="formulier van voortgang 1">
 
 </details>
 
@@ -155,7 +154,9 @@ Home pagina
   <summary>uitwerken voor 2e voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  De homepage gaat de goede kant op, en kan binnenkort wel afgerond worden omdat het nu een kwestie is van
+  copy pasten. Andere pagina moet nog veel aan gedaan worden maar daar is vooral grid het onderdeel en de rest in die
+  pagina is gewoon content goed plaatsen en vormgeven. 
 
 
   ### Agenda voor meeting

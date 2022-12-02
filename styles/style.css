@@ -1,3 +1,13 @@
+@font-face {
+	font-family: 'robotobold';
+	src: url('../fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+	font-family: 'robotoregular';	
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+
 /**************/
 /* CSS REMEDY */
 /**************/
@@ -8,9 +18,6 @@
 button, summary {
 	cursor: pointer;
 }
-
-
-
 
 
 /*********************/
@@ -28,6 +35,12 @@ button, summary {
 
 /* jouw code */
 
+/* voor nav */
+body{
+	margin: 0;
+	padding: 0;
+}
+
 nav {
 	width: 100%;
 }
@@ -36,13 +49,14 @@ nav:first-of-type{
 	display: flex;
 }
 
+/* voor de eerste nav balk */
 nav:first-of-type ul {
 	list-style-type: none;
-	margin: auto;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	width: 100%;
+    margin: 0em 0em 0em 4em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 nav:first-of-type ul {
@@ -55,18 +69,97 @@ nav:first-of-type ul li {
 
 nav:first-of-type ul li img {
 	width: 2.2em;
-	margin: 0.2em;
+	margin: 0.3em;
 }
 
-nav:first-of-type img {
-	width: 20%;
+nav>a img {	
+	height: 2.5em;
+	margin: 0.3em;
 }
 
+/* voor tweede nav balk */
 nav:last-of-type ul {
 	list-style-type: none;
 	margin: auto;
 	display: inline-flex;
 	flex-direction: row;
-	justify-content: space-evenly;
+	justify-content: center;
 	width: 100%;
+	padding: 0em;
+	font-family: 'robotobold';
+    text-transform: uppercase;
+    color: #ababab;
+    margin-top: 0.5em;
+	margin-bottom: 1em;
+}
+
+nav:last-of-type li {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+main>section ul {
+	padding: 0;
+	margin: 0em;
+}
+
+li {
+	list-style-type: none;
+}
+
+
+section img {
+	width: 100%;
+    height: 65vh;
+	object-fit: cover;
+	display: block;
+	justify-content: center;
+}
+
+section li {
+	position: relative;
+}
+
+section ul li:first-of-type h2 {
+	position:absolute;
+	background-color: white;	
+	text-align: center;
+	font-size: 1.1em;
+	width: 100%;
+	bottom: 5em;
+	margin: 0;
+	padding: 0.5em;
+}
+
+section ul li>h2 {
+	  position:absolute;
+	  background-color: white;
+	  text-align: center;
+	  font-size: 1em;
+	  width: 100%;
+	  bottom:2.5em;
+	  margin:0;
+	  padding: 0.5em;
+}
+
+section ul li:first-of-type h3 {
+	position:absolute;
+	background-color: white;
+	text-align: center;
+	font-size: 0.8em;
+	width: 100%;
+	bottom: 6.8em;
+	margin: 0;
+	padding: 0.5em;
+}
+	
+section ul li>p {
+	position:absolute;
+	background-color: white;
+	text-align: center;
+	font-size: 0.9em;
+	width: 100%;
+	bottom:0;
+	margin:0;
+	padding: 0.5em;
 }
