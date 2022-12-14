@@ -18,7 +18,10 @@
 button, summary {
 	cursor: pointer;
 }
-
+* {
+	margin: 0;
+	padding: 0;
+}
 
 /*********************/
 /* CUSTOM PROPERTIES */
@@ -37,12 +40,38 @@ button, summary {
 
 /* voor nav */
 body{
-	margin: 0;
-	padding: 0;
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f4f4f4;
+}
+
+/* h1 alleen voor de semantiek en screenreaders, omda */
+h1{ 
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+}
+
+h4 {
+    font-size: 1em;
+    text-transform: uppercase;
+}
+
+li {
+	list-style-type: none;
+}
+
+header {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	width: 100%;
 }
 
 nav {
 	width: 100%;
+	background-color: white;
 }
 
 nav:first-of-type{
@@ -59,8 +88,8 @@ nav:first-of-type ul {
     width: 100%;
 }
 
-nav:first-of-type ul {
-		width: 80%;
+nav:first-of-type ul{
+	width: 80%;
 }
 
 nav:first-of-type ul li {
@@ -98,68 +127,359 @@ nav:last-of-type li {
 	padding-right: 1em;
 }
 
+main {
+	margin-top: 6.06em;
+}
+/* sections */
+main>section {
+    background-color: white;
+    box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory; /* voor het snap effect van de scroll */
+	width: 100%;
+}
+
+main>section:first-of-type section{
+	overflow-y: scroll ;
+	scroll-snap-type: y mandatory;
+}
+
 main>section ul {
 	padding: 0;
 	margin: 0em;
 }
 
-li {
-	list-style-type: none;
-}
-
-
-section img {
+li>img {
 	width: 100%;
-    height: 65vh;
+    min-height: 65vh;
 	object-fit: cover;
-	display: block;
-	justify-content: center;
 }
-
+section>ul {
+	display: flex;
+	flex-direction: row;
+	width: 400%;
+}
 section li {
+	height: calc(100vh - 6.06em); /*hoogte van scherm min header*/
+	width: 100vw;
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	scroll-snap-align: center; /* snap effect voor de li */
 }
 
-section ul li:first-of-type h2 {
-	position:absolute;
-	background-color: white;	
-	text-align: center;
-	font-size: 1.1em;
-	width: 100%;
-	bottom: 5em;
+li>section {
+	position: absolute;
+	bottom: 0;
 	margin: 0;
-	padding: 0.5em;
-}
-
-section ul li>h2 {
-	  position:absolute;
-	  background-color: white;
-	  text-align: center;
-	  font-size: 1em;
-	  width: 100%;
-	  bottom:2.5em;
-	  margin:0;
-	  padding: 0.5em;
-}
-
-section ul li:first-of-type h3 {
-	position:absolute;
-	background-color: white;
-	text-align: center;
-	font-size: 0.8em;
+	padding: 0;
 	width: 100%;
-	bottom: 6.8em;
-	margin: 0;
-	padding: 0.5em;
-}
-	
-section ul li>p {
-	position:absolute;
+	min-height: 30vh;
 	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
+}
+
+li section>h2{
+	font-size: 1.3em;
+	order: 2;
+}
+
+li section>h3{
+	order: 1;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+li section>p{
 	font-size: 0.9em;
-	width: 100%;
-	bottom:0;
-	margin:0;
-	padding: 0.5em;
+	padding: 1em;
+	order: 3;
 }
+
+li section>button{
+	order: 4;
+	background-color: black;
+	border: none;
+	color: white;
+	padding: 1em 5em;
+	text-align: center;
+	text-decoration: none;
+	font-size: 0.8em;
+}
+
+section:first-of-type li section>h3 {
+	font-size: 0.8em;
+	font-weight: lighter;
+	margin-bottom: 0.5em;
+}
+
+section:first-of-type li section>p {
+    font-size: 0.9em;
+    padding: 0.5em;
+    padding-bottom: 1em;
+}
+
+section:nth-of-type(2) li>section {
+	position: absolute;
+	bottom: 0;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	min-height: 30vh;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+section:nth-of-type(2) li section>h2{
+	font-size: 1.3em;
+	order: 2;
+}
+
+section:nth-of-type(2) li section>h3{
+	order: 1;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+section:nth-of-type(2) li section>p{
+	font-size: 0.9em;
+	padding: 1em;
+	order: 3;
+}
+
+/* styling voor tweede pagina die compleet andere stling heeft dan homepagina*/
+.men section{
+	margin-bottom: 2.2em;
+	overflow-x: unset;
+}
+
+.men h2 {
+	text-align: center;
+	font-weight: lighter;
+	margin-top: 0em;
+    padding-top: 1.5em;
+    padding-bottom: 0.5em;
+}
+
+.men li>section{
+    position: relative;
+    min-height: unset;
+}
+
+/* styling voor eerste section*/
+.men section:first-of-type img{
+	width: 100%;
+	height: 64vh;
+	object-fit: cover;	
+}
+
+
+/* hier begint de styling van tweede section*/
+.men section:nth-of-type(2){
+	display: grid;
+	grid-template-columns:1fr 1fr 1fr;
+	gap: 1em;
+	text-align: center;
+}
+.men section:nth-of-type(2) h2{
+	grid-column: 1 / -1; /* Hierdoor pakt de h2 de hele grid breedte en staat die dus "alleen" */
+}
+
+.men section:nth-of-type(2) p{
+	font-size: 0.8em;
+}
+
+
+.men section:nth-of-type(2) img {
+	width: 100%;
+}
+
+/* hier begint styling voor derde section */
+.men section:nth-of-type(3){
+	padding-bottom: 2em;
+}
+
+.men section:nth-of-type(3) article {
+    display: flex;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.men section:nth-of-type(3) h2 {
+	margin-bottom: 0.5em;
+}
+
+.men section:nth-of-type(3) h3 {
+	font-size: 1em;
+	font-weight: bold;
+}
+
+.men section:nth-of-type(3) img {
+	width: 40%;	
+	padding-right: 1em;
+}
+
+/* styling van vierde section*/
+
+.men section:nth-of-type(4) > section{
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory; /* voor het snap effect van de scroll */
+	width: 100%;
+	padding: 1em;
+}
+
+.men section:nth-of-type(4) ul {
+    gap: 0.5em;
+}
+
+.men section:nth-of-type(4) li {
+    height: 70vw;
+    width: 57vw;
+}
+.men section:nth-of-type(4) li section img{
+	width: 100%;
+    height: 25vh;
+	object-fit: contain;
+	background-color: white;
+}
+
+.men section:nth-of-type(4) li section h4{
+	font-size: 0.8em;
+	text-align: center;
+}
+
+.men section:nth-of-type(4) li section h5{
+	font-size: 0.8em;
+	margin-left: 11em;
+	margin-top: 0.3em;
+	color: red;
+}
+
+/* voor de kleurmogelijkheden bij recommandation*/
+.men section:nth-of-type(4) ul li section ul{
+	display: flex;
+	width: 100%;
+	gap: 0.5em;
+	padding-left: 1.5em;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+}
+.men section:nth-of-type(4) ul li section ul li{
+	width: 20px;
+	height: 20px;
+}
+
+.men section:nth-of-type(4)>ul{
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+	width: 400%;
+}
+
+/* kleurmogelijkheden bij ultra warm hybrid down coat*/
+.men section:nth-of-type(4) ul li section ul li:first-of-type{
+	background-color: #000;
+}
+
+.men section:nth-of-type(4) ul li section ul li:nth-of-type(2){
+	background-color: rgb(174, 139, 73);
+}
+
+.men section:nth-of-type(4) ul li section ul li:nth-of-type(3){
+	background-color: rgb(150, 101, 8);
+}
+
+.men section:nth-of-type(4) ul li section ul li:nth-of-type(4){
+	background-color: rgb(46, 71, 39);
+}
+
+/* kleurmogelijkheden bij flannel regular fit jacket*/
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:first-of-type{
+	background-color: rgb(243, 230, 210);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(2){
+	background-color: rgb(166, 166, 166);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(3){
+	background-color: rgb(174, 139, 73);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(4){
+	background-color: rgb(46, 71, 39);
+}
+
+/* kleurmogelijkheden bij fleece zipped jacket*/
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:first-of-type{
+	background-color: rgb(111, 10, 10);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(2){
+	background-color: rgb(243, 230, 210);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(3){
+	background-color: rgb(166, 166, 166);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(4){
+	background-color: rgb(46, 46, 46);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(5){
+	background-color: rgb(0, 0, 0);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(6){
+	background-color: rgb(247, 162, 166);
+}
+
+/* kleurmogelijkheden bij checked overshirt jacket*/
+.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:first-of-type{
+	background-color: rgb(166, 166, 166);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:nth-of-type(2){
+	background-color: rgb(111, 10, 10);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:nth-of-type(3){
+	background-color: rgb(0, 0, 0);
+}
+
+/* kleurmogelijkheden bij soufflee mock neck jumper*/
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:first-of-type{
+	background-color: rgb(65, 76, 59);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(2){
+	background-color: rgb(201, 201, 201);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(3){
+	background-color: rgb(70, 70, 70);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(4){
+	background-color: rgb(0, 0, 0);
+}
+
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(5){
+	background-color: rgb(223, 191, 145);
+}
+
+/*
+Bronnenlijst:
+- Studenassistent Nina heeft me vooral geholpen en de uitgelegd hoe je de scroll op home laat werken
+- https://codepen.io/shooft/pen/vYRjoxG (uitwerking van Sanne heeft me geholpen en de grid leren te begrijpen)
+- 
+*/

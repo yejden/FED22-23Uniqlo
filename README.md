@@ -103,7 +103,7 @@ Home pagina
 
   ### de hele pagina: 
   <img src="readme-images/fullpagehome.jpg" width="375px" alt="breakdown van de hele pagina">
-  <img src="readme-images/fullpagemen.jpg" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/fullpagemenv2.png" width="375px" alt="breakdown van de hele pagina">
 
   ### dynamisch deel (bijv menu): 
   <img src="readme-images/menu.png" width="375px" alt="breakdown van een dynamisch deel">
@@ -161,6 +161,7 @@ Home pagina
 
   ### Agenda voor meeting
   samen met je groepje opstellen
+  Deze voortgang les hebben we zonder gedaan.
 
   | student 1      | student 2          | student 3    | student 4        |
   | ---            | ---                | ---          | ---              |
@@ -172,7 +173,9 @@ Home pagina
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
-  - punt 1
+  - punt 1 De volgorde van h2 en h3 en de p op homepagina anders doen, nu is er bottom gebruikt maar
+  op de li een display flex zetten, met flex-direction: column en dan kun je met li h3 de property order de volgorde wijzigen. 
+  Dus li h2 een latere nummer geven in de order dan h3 (CSS tricks flexbox ultimateguide)
   - punt 2
   - nog een punt
 - ...
