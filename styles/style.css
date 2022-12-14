@@ -70,12 +70,32 @@ header {
 }
 
 footer {
-	background-color: #ababab;
+	background-color: white;
+	margin-top: 2em;
+	position: unset;
 }
 
-footer>ul li img {
+footer section h2 {
+	background-color: #ebebeb;
+	text-align: center;
+	padding-top: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size: 1.2em;
+}
+
+footer:first-of-type section section {
+	background-color: #ebebeb;
 	display: flex;
 	flex-direction: row;
+	justify-content: center;
+	width: 100%;
+}
+
+footer:first-of-type section section img{
+	width: 2.5em;
+    height: 2.5em;
+    margin: 0.3em;
 }
 
 nav {
