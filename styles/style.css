@@ -69,6 +69,15 @@ header {
 	width: 100%;
 }
 
+footer {
+	background-color: #ababab;
+}
+
+footer>ul li img {
+	display: flex;
+	flex-direction: row;
+}
+
 nav {
 	width: 100%;
 	background-color: white;
@@ -127,21 +136,21 @@ nav:last-of-type li {
 	padding-right: 1em;
 }
 
+/* sections */
 main {
 	margin-top: 6.06em;
-}
-/* sections */
-main>section {
-    background-color: white;
-    box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
-	overflow-x: scroll;
-	scroll-snap-type: x mandatory; /* voor het snap effect van de scroll */
-	width: 100%;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+	height: calc(100vh - 6.06em); /*hoogte van scherm min header*/
 }
 
-main>section:first-of-type section{
-	overflow-y: scroll ;
-	scroll-snap-type: y mandatory;
+main>section {
+	background-color: white;
+	box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory; /* voor het snap effect van de scroll */
+	scroll-snap-align: center;
+	width: 100%;
 }
 
 main>section ul {
@@ -363,7 +372,7 @@ section:nth-of-type(2) li section>p{
 	color: red;
 }
 
-/* voor de kleurmogelijkheden bij recommandation*/
+/* voor de kleurmogelijkheden bij recommandation, klasgenoot bahaa heeft me deze manier uitgelegd*/
 .men section:nth-of-type(4) ul li section ul{
 	display: flex;
 	width: 100%;
@@ -477,9 +486,3 @@ section:nth-of-type(2) li section>p{
 	background-color: rgb(223, 191, 145);
 }
 
-/*
-Bronnenlijst:
-- Studenassistent Nina heeft me vooral geholpen en de uitgelegd hoe je de scroll op home laat werken
-- https://codepen.io/shooft/pen/vYRjoxG (uitwerking van Sanne heeft me geholpen en de grid leren te begrijpen)
-- 
-*/
