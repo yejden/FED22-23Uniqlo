@@ -208,14 +208,30 @@ Home pagina
 
   #### Motoriek (shocks, elastiekjes)
   Hier korte omschrijving (met indien nodig afbeeldingen)
+  Het was heftiger dan ik dacht, als je op je telefoon door de uniqlo website gaat dan kom je met die schokken moeilijk bij de navigatie, maar onderin bij je telefoon kom je wel gemakkelijk bij en heb je daar wel controle over. Om te typen moet je ook erg concentreren omdat je anders uitschiet, en sliders schiet je ook uit. Conclusie is dat je niet zo'n goed controle meer hebt over je vingers.
+
+  Lezen is wat moeilijker bij kleine lettertjes omdat je constant trilt en schud. 
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Om de slider op te lossen kan je de functie snap doen, dat die snapt naar de volgende in plaats van dat je door kan sliden. Voor de lettertype kan je de lettertypes vergroten.
 
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
   Hier korte omschrijving (met indien nodig afbeeldingen)
 
+  Concentratie problemen, terwijl je een ballon hoog houdt. Dit zorgt ervoor dat je niet kan lezen en elke keer moet zoeken waar je bent gebleven met het lezen. Het lezen uberhaupt erg moeilijk omdat je moet concentreren op de kleine letters en je bent hele tijd afgeleid.
+
+  De brillen:
+  Ouderdoms bril gaf me vooral hoofdpijn en duizeligheid, want je ziet hele tijd vlekken.
+  De blurbril maakt alles erg onduidelijk je ziet zo goed als niks, zo wazig is het.
+  Central field loss maakt het heel moeilijk om van afstand te zien, maar als je dichterbij het scherm gaat is het wel goed genoeg zichtbaar
+  Hemifield loss zie je een helft niets, maar de andere helft is nog net zo goed zichtbaar dus dat kan je wel volgen.
+  Laag contrast bril zorgde ervoor dat ik tekst op de navbar niet meer kon lezen dus de dingen die laag contrast waren, waren niet meer zichtbaar.
+
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Lettertypes vergroten en iets om bij te houden waar je bent gebleven is wel handig, alleen kom ik nog niet precies op wat ervoor zou kunnen doen.
+
+  De beste oplossing voor mensen die zichtbeperking hebben zijn screenreaders
 
 </details>
 
