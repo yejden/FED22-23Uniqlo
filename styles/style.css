@@ -4,20 +4,45 @@
 }
 
 @font-face {
-	font-family: 'robotoregular';	
+	font-family: 'robotoregular';
 	src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@media (prefers-reduced-motion) {
+
+	/* styles voor mensen met de settings
+	prefers reduced motion, zodat het meer toegankelijker
+	is voor mensen met epilepsie en bepaalde animaties en scroll effecten
+	niet meer werken, bron van developer.mozilla.org */
+	.overflow {
+		overflow-x: unset;
+		scroll-snap-type: unset;
+		scroll-snap-align: unset;
+	}
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--color-text: white;
+		--color-background: black;
+		--color-button: white;
+	}
 }
 
 /**************/
 /* CSS REMEDY */
 /**************/
-*, *::after, *::before {
-  box-sizing:border-box;  
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
 }
 
-button, summary {
+button,
+summary {
 	cursor: pointer;
 }
+
 * {
 	margin: 0;
 	padding: 0;
@@ -28,8 +53,8 @@ button, summary {
 /*********************/
 :root {
 	/* startje */
-	--color-text:#111;
-	--color-background:#eee;
+	--color-text: #111;
+	--color-background: #eee;
 }
 
 /****************/
@@ -39,13 +64,13 @@ button, summary {
 /* jouw code */
 
 /* voor nav */
-body{
+body {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: #f4f4f4;
 }
 
 /* h1 alleen voor de semantiek en screenreaders, omda */
-h1{ 
+h1 {
 	position: absolute;
 	left: -10000px;
 	top: auto;
@@ -54,8 +79,8 @@ h1{
 }
 
 h4 {
-    font-size: 1em;
-    text-transform: uppercase;
+	font-size: 1em;
+	text-transform: uppercase;
 }
 
 li {
@@ -72,16 +97,32 @@ header {
 footer {
 	background-color: white;
 	margin-top: 2em;
-	position: unset;
 }
 
 footer section h2 {
 	background-color: #ebebeb;
 	text-align: center;
-	padding-top: 1em;
+	padding-top: 2em;
 	padding-left: 1em;
 	padding-right: 1em;
 	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+footer section p {
+	background-color: #ebebeb;
+	text-align: center;
+	font-size: 0.9em;
+	padding: 2em
+}
+
+footer section:nth-of-type(3) p {
+	padding: 2.5em
+}
+
+footer>section {
+	border-bottom: #000 solid;
+	border-width: 0.01em;
 }
 
 footer:first-of-type section section {
@@ -90,12 +131,13 @@ footer:first-of-type section section {
 	flex-direction: row;
 	justify-content: center;
 	width: 100%;
+	padding-bottom: 1em;
 }
 
-footer:first-of-type section section img{
+footer:first-of-type section section img {
 	width: 2.5em;
-    height: 2.5em;
-    margin: 0.3em;
+	height: 2.5em;
+	margin: 0.3em;
 }
 
 nav {
@@ -103,21 +145,21 @@ nav {
 	background-color: white;
 }
 
-nav:first-of-type{
+nav:first-of-type {
 	display: flex;
 }
 
 /* voor de eerste nav balk */
 nav:first-of-type ul {
 	list-style-type: none;
-    margin: 0em 0em 0em 4em;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    width: 100%;
+	margin: 0em 0em 0em 4em;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	width: 100%;
 }
 
-nav:first-of-type ul{
+nav:first-of-type ul {
 	width: 80%;
 }
 
@@ -130,13 +172,32 @@ nav:first-of-type ul li img {
 	margin: 0.3em;
 }
 
-nav>a img {	
+nav>a img {
 	height: 2.5em;
 	margin: 0.3em;
 }
 
 /* voor tweede nav balk */
-nav:last-of-type ul {
+nav:nth-of-type(2) {
+	background-color: white;
+	border-top: rgb(220, 220, 220) solid;
+	border-bottom: rgb(220, 220, 220) solid;
+	overflow: hidden;
+}
+
+nav:nth-of-type(2) a {
+	text-decoration: none;
+	border-bottom: 3px solid transparent;
+	color: rgb(87, 87, 87);
+}
+
+nav:nth-of-type(2) a.active {
+	border-bottom: 0.2em solid black;
+	padding-bottom: 0.5em;
+	color: #000;
+}
+
+nav:nth-of-type(2) ul {
 	list-style-type: none;
 	margin: auto;
 	display: inline-flex;
@@ -145,15 +206,54 @@ nav:last-of-type ul {
 	width: 100%;
 	padding: 0em;
 	font-family: 'robotobold';
-    text-transform: uppercase;
-    color: #ababab;
-    margin-top: 0.5em;
+	text-transform: uppercase;
+	color: rgb(87, 87, 87);
+	margin-top: 0.5em;
 	margin-bottom: 1em;
 }
 
-nav:last-of-type li {
+nav:nth-of-type(2) li {
+	padding-top: 0.5em;
 	padding-left: 1em;
 	padding-right: 1em;
+}
+
+/* hamburger menu nav */
+.hamburger {
+	background-color: white;
+	text-align: left;
+	margin: 0;
+	position: fixed;
+	top: 3.4em;
+	height: 100%;
+	width: 100%;
+	right: -100vw;
+	z-index: 100;
+	transition: 0.25s ease-out;
+}
+
+.hamburger h2 {
+	width: 110%;
+	font-weight: 100;
+	color: #000;
+	padding: 1em;
+	border:#000 solid;
+}
+
+.hamburger a {
+	text-decoration: none;
+	color: #000;
+}
+
+.hamburger img {
+	width: 1.5em;
+	height: 1.5em;
+	right: -100vw;
+	z-index: 10;
+}
+
+.hamburger.open {
+	right: 0;
 }
 
 /* sections */
@@ -161,14 +261,21 @@ main {
 	margin-top: 6.06em;
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
-	height: calc(100vh - 6.06em); /*hoogte van scherm min header*/
+	height: calc(100vh - 6.06em);
+	/*hoogte van scherm min header*/
+}
+
+.overflow {
+	overflow: hidden;
+	/*overflow class code geschreven door Nina*/
 }
 
 main>section {
 	background-color: white;
 	box-shadow: 0 2px 2px rgb(0 0 0 / 20%);
 	overflow-x: scroll;
-	scroll-snap-type: x mandatory; /* voor het snap effect van de scroll */
+	scroll-snap-type: x mandatory;
+	/* voor het snap effect van de scroll */
 	scroll-snap-align: center;
 	width: 100%;
 }
@@ -180,21 +287,25 @@ main>section ul {
 
 li>img {
 	width: 100%;
-    min-height: 65vh;
+	min-height: 65vh;
 	object-fit: cover;
 }
+
 section>ul {
 	display: flex;
 	flex-direction: row;
 	width: 400%;
 }
+
 section li {
-	height: calc(100vh - 6.06em); /*hoogte van scherm min header*/
+	height: calc(100vh - 6.06em);
+	/*hoogte van scherm min header*/
 	width: 100vw;
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	scroll-snap-align: center; /* snap effect voor de li */
+	scroll-snap-align: center;
+	/* snap effect voor de li */
 }
 
 li>section {
@@ -212,24 +323,24 @@ li>section {
 	text-align: center;
 }
 
-li section>h2{
+li section>h2 {
 	font-size: 1.3em;
 	order: 2;
 }
 
-li section>h3{
+li section>h3 {
 	order: 1;
-    font-size: 0.8em;
-    margin-bottom: 1em;
+	font-size: 0.8em;
+	margin-bottom: 1em;
 }
 
-li section>p{
+li section>p {
 	font-size: 0.9em;
 	padding: 1em;
 	order: 3;
 }
 
-li section>button{
+li section>button {
 	order: 4;
 	background-color: black;
 	border: none;
@@ -240,6 +351,11 @@ li section>button{
 	font-size: 0.8em;
 }
 
+li section>button:hover {
+	background-color: rgb(220, 220, 220);
+	color: #000;
+}
+
 section:first-of-type li section>h3 {
 	font-size: 0.8em;
 	font-weight: lighter;
@@ -247,9 +363,9 @@ section:first-of-type li section>h3 {
 }
 
 section:first-of-type li section>p {
-    font-size: 0.9em;
-    padding: 0.5em;
-    padding-bottom: 1em;
+	font-size: 0.9em;
+	padding: 0.5em;
+	padding-bottom: 1em;
 }
 
 section:nth-of-type(2) li>section {
@@ -267,62 +383,85 @@ section:nth-of-type(2) li>section {
 	text-align: center;
 }
 
-section:nth-of-type(2) li section>h2{
+section:nth-of-type(2) li section>h2 {
 	font-size: 1.3em;
 	order: 2;
 }
 
-section:nth-of-type(2) li section>h3{
+section:nth-of-type(2) li section>h3 {
 	order: 1;
-    font-size: 0.8em;
-    margin-bottom: 1em;
+	font-size: 0.8em;
+	margin-bottom: 1em;
 }
 
-section:nth-of-type(2) li section>p{
+section:nth-of-type(2) li section>p {
 	font-size: 0.9em;
 	padding: 1em;
 	order: 3;
 }
 
 /* styling voor tweede pagina die compleet andere stling heeft dan homepagina*/
-.men section{
+.men {
+	overflow-y: unset;
+	scroll-snap-type: unset;
+	height: unset
+}
+
+.men section {
 	margin-bottom: 2.2em;
 	overflow-x: unset;
 }
 
 .men h2 {
 	text-align: center;
-	font-weight: lighter;
+	font-weight: bold;
 	margin-top: 0em;
-    padding-top: 1.5em;
-    padding-bottom: 0.5em;
+	padding-top: 1.5em;
+	padding-bottom: 0.5em;
 }
 
-.men li>section{
-    position: relative;
-    min-height: unset;
+.men li>section {
+	position: relative;
+	min-height: unset;
 }
 
 /* styling voor eerste section*/
-.men section:first-of-type img{
+.men section:first-of-type {
+	padding-bottom: 2em;
+}
+
+.men section:first-of-type img {
 	width: 100%;
 	height: 64vh;
-	object-fit: cover;	
+	object-fit: cover;
+}
+
+.men section:first-of-type h3 {
+	padding: 1em;
+}
+
+.men section:first-of-type p {
+	padding-bottom: 1em;
+	padding-left: 1em;
+	padding-right: 1em;
 }
 
 
 /* hier begint de styling van tweede section*/
-.men section:nth-of-type(2){
+.men section:nth-of-type(2) {
 	display: grid;
-	grid-template-columns:1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 	gap: 1em;
 	text-align: center;
-}
-.men section:nth-of-type(2) h2{
-	grid-column: 1 / -1; /* Hierdoor pakt de h2 de hele grid breedte en staat die dus "alleen" */
+	padding-bottom: 5em;
 }
 
-.men section:nth-of-type(2) p{
+.men section:nth-of-type(2) h2 {
+	grid-column: 1 / -1;
+	/* Hierdoor pakt de h2 de hele grid breedte en staat die dus "alleen" */
+}
+
+.men section:nth-of-type(2) p {
 	font-size: 0.8em;
 }
 
@@ -332,12 +471,12 @@ section:nth-of-type(2) li section>p{
 }
 
 /* hier begint styling voor derde section */
-.men section:nth-of-type(3){
-	padding-bottom: 2em;
+.men section:nth-of-type(3) {
+	padding-bottom: 1em;
 }
 
 .men section:nth-of-type(3) article {
-    display: flex;
+	display: flex;
 	padding-left: 1em;
 	padding-right: 1em;
 }
@@ -352,40 +491,46 @@ section:nth-of-type(2) li section>p{
 }
 
 .men section:nth-of-type(3) img {
-	width: 40%;	
-	padding-right: 1em;
+	width: 10em;
+	height: 10em;
+}
+
+.men section:nth-of-type(3) article section {
+	margin-bottom: 0em;
 }
 
 /* styling van vierde section*/
 
-.men section:nth-of-type(4) > section{
+.men section:nth-of-type(4)>section {
 	overflow-x: scroll;
-	scroll-snap-type: x mandatory; /* voor het snap effect van de scroll */
+	scroll-snap-type: x mandatory;
+	/* voor het snap effect van de scroll */
 	width: 100%;
 	padding: 1em;
 }
 
 .men section:nth-of-type(4) ul {
-    gap: 0.5em;
+	gap: 0.5em;
 }
 
 .men section:nth-of-type(4) li {
-    height: 70vw;
-    width: 57vw;
+	height: 70vw;
+	width: 57vw;
 }
-.men section:nth-of-type(4) li section img{
+
+.men section:nth-of-type(4) li section img {
 	width: 100%;
-    height: 25vh;
+	height: 25vh;
 	object-fit: contain;
 	background-color: white;
 }
 
-.men section:nth-of-type(4) li section h4{
+.men section:nth-of-type(4) li section h4 {
 	font-size: 0.8em;
 	text-align: center;
 }
 
-.men section:nth-of-type(4) li section h5{
+.men section:nth-of-type(4) li section h5 {
 	font-size: 0.8em;
 	margin-left: 11em;
 	margin-top: 0.3em;
@@ -393,7 +538,7 @@ section:nth-of-type(2) li section>p{
 }
 
 /* voor de kleurmogelijkheden bij recommandation, klasgenoot bahaa heeft me deze manier uitgelegd*/
-.men section:nth-of-type(4) ul li section ul{
+.men section:nth-of-type(4) ul li section ul {
 	display: flex;
 	width: 100%;
 	gap: 0.5em;
@@ -401,12 +546,13 @@ section:nth-of-type(2) li section>p{
 	margin-top: 0.4em;
 	margin-bottom: 0.4em;
 }
-.men section:nth-of-type(4) ul li section ul li{
+
+.men section:nth-of-type(4) ul li section ul li {
 	width: 20px;
 	height: 20px;
 }
 
-.men section:nth-of-type(4)>ul{
+.men section:nth-of-type(4)>ul {
 	display: flex;
 	flex-direction: row;
 	gap: 1em;
@@ -414,95 +560,140 @@ section:nth-of-type(2) li section>p{
 }
 
 /* kleurmogelijkheden bij ultra warm hybrid down coat*/
-.men section:nth-of-type(4) ul li section ul li:first-of-type{
+.men section:nth-of-type(4) ul li section ul li:first-of-type {
 	background-color: #000;
 }
 
-.men section:nth-of-type(4) ul li section ul li:nth-of-type(2){
+.men section:nth-of-type(4) ul li section ul li:nth-of-type(2) {
 	background-color: rgb(174, 139, 73);
 }
 
-.men section:nth-of-type(4) ul li section ul li:nth-of-type(3){
+.men section:nth-of-type(4) ul li section ul li:nth-of-type(3) {
 	background-color: rgb(150, 101, 8);
 }
 
-.men section:nth-of-type(4) ul li section ul li:nth-of-type(4){
+.men section:nth-of-type(4) ul li section ul li:nth-of-type(4) {
 	background-color: rgb(46, 71, 39);
 }
 
 /* kleurmogelijkheden bij flannel regular fit jacket*/
-.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:first-of-type{
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:first-of-type {
 	background-color: rgb(243, 230, 210);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(2){
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(2) {
 	background-color: rgb(166, 166, 166);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(3){
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(3) {
 	background-color: rgb(174, 139, 73);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(4){
+.men section:nth-of-type(4) ul li:nth-of-type(2) section ul li:nth-of-type(4) {
 	background-color: rgb(46, 71, 39);
 }
 
 /* kleurmogelijkheden bij fleece zipped jacket*/
-.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:first-of-type{
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:first-of-type {
 	background-color: rgb(111, 10, 10);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(2){
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(2) {
 	background-color: rgb(243, 230, 210);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(3){
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(3) {
 	background-color: rgb(166, 166, 166);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(4){
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(4) {
 	background-color: rgb(46, 46, 46);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(5){
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(5) {
 	background-color: rgb(0, 0, 0);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(6){
+.men section:nth-of-type(4) ul li:nth-of-type(3) section ul li:nth-of-type(6) {
 	background-color: rgb(247, 162, 166);
 }
 
 /* kleurmogelijkheden bij checked overshirt jacket*/
-.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:first-of-type{
+.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:first-of-type {
 	background-color: rgb(166, 166, 166);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:nth-of-type(2){
+.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:nth-of-type(2) {
 	background-color: rgb(111, 10, 10);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:nth-of-type(3){
+.men section:nth-of-type(4) ul li:nth-of-type(4) section ul li:nth-of-type(3) {
 	background-color: rgb(0, 0, 0);
 }
 
 /* kleurmogelijkheden bij soufflee mock neck jumper*/
-.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:first-of-type{
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:first-of-type {
 	background-color: rgb(65, 76, 59);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(2){
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(2) {
 	background-color: rgb(201, 201, 201);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(3){
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(3) {
 	background-color: rgb(70, 70, 70);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(4){
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(4) {
 	background-color: rgb(0, 0, 0);
 }
 
-.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(5){
+.men section:nth-of-type(4) ul li:nth-of-type(5) section ul li:nth-of-type(5) {
 	background-color: rgb(223, 191, 145);
 }
 
+.men section:nth-of-type(5) h2 {
+	text-align: center;
+	padding: 1em 1em 0em 1em;
+}
+
+.men section:nth-of-type(5) p {
+	text-align: center;
+	padding-top: 0.5em;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+.men section:nth-of-type(5) form {
+	display: flex;
+	flex-direction: column;
+}
+
+.men section:nth-of-type(5) form>input[type=text] {
+	display: block;
+	text-align: left;
+	width: 80%;
+	padding: 12px 20px;
+	margin-top: 1em;
+	margin-left: 3em;
+	box-sizing: border-box;
+}
+
+.men section:nth-of-type(5) form>input[type=email] {
+	width: 80%;
+	padding: 12px 20px;
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+	margin-left: 3em;
+	box-sizing: border-box;
+}
+
+.men section:nth-of-type(5) form>input[type=submit] {
+	width: 8em;
+	height: 3em;
+	text-align: center;
+	margin-left: 11em;
+	margin-bottom: 2em;
+	background-color: black;
+	color: white;
+}

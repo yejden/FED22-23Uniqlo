@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="18" height="18">
+  <defs>
+    <style>
+      .burger{
+        fill:#fff;
+      }
+    </style>
+  </defs>
+	<g id="burger">
+		<rect class="burger" y="2" width="40" height="7"/>
+		<rect class="burger" y="16.5" width="40" height="7"/>
+		<rect class="burger" y="31" width="40" height="7"/>
+	</g>
+</svg>

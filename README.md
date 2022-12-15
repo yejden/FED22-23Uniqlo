@@ -24,6 +24,8 @@ Nb. Door *open* toe te voegen aan een *details* element kun je deze standaard op
 
   #### Je focus:
   Ik vind het werken aan surface plane leuker denk ik, maar denk dat mijn mijn niveau aan coderen de responsiveness wat makkelijker zal gaan, al zou ik als uitdaging de surface plane ook goed proberen uit te werken.
+
+  15-12-2022: ben uiteindelijk toch verder gegaan met surface plane uitwerken
  
 </details>
 
@@ -102,8 +104,9 @@ Home pagina
   <summary>uitwerken na afloop 2e werkgroep</summary>
 
   ### de hele pagina: 
-  <img src="readme-images/fullpagehome.jpg" width="375px" alt="breakdown van de hele pagina">
-  <img src="readme-images/fullpagemenv2.png" width="375px" alt="breakdown van de hele pagina">
+  <img src="readme-images/breakdownhome.jpg" width="375px" alt="breakdown van de hele homepagina">
+
+  <img src="readme-images/breakdownheren.jpg" width="375px" alt="breakdown van de hele herenpagina">
 
   ### dynamisch deel (bijv menu): 
   <img src="readme-images/menu.png" width="375px" alt="breakdown van een dynamisch deel">
@@ -124,12 +127,7 @@ Home pagina
 
   ### Agenda voor meeting
   samen met je groepje opstellen
-
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  dit hadden we niet gedaan bij de voortgang. We werkte allemaal door en stelde vragen bij de studentenassistent als er vragen waren           |
 
 
   ### Verslag van meeting
@@ -162,13 +160,7 @@ Home pagina
   ### Agenda voor meeting
   samen met je groepje opstellen
   Deze voortgang les hebben we zonder gedaan.
-
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
-
+  NIET VAN TOEPASSING
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
@@ -176,9 +168,7 @@ Home pagina
   - punt 1 De volgorde van h2 en h3 en de p op homepagina anders doen, nu is er bottom gebruikt maar
   op de li een display flex zetten, met flex-direction: column en dan kun je met li h3 de property order de volgorde wijzigen. 
   Dus li h2 een latere nummer geven in de order dan h3 (CSS tricks flexbox ultimateguide)
-  - punt 2
-  - nog een punt
-- ...
+-
 
 </details>
 
@@ -196,8 +186,10 @@ Home pagina
 
   #### Screenreader
   Hier korte omschrijving (met indien nodig afbeeldingen)
+  Het is ingewikkeld omdat ik de screenreader niet zo goed begrijp, maar als de website toegankelijk is en je de werking van screenreader gebruikt zal het wel eens goed kunnen werken, ook al blijft het minder fijn dan zonder screenreader.
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
+  Mijn code semantisch schrijven, zal ervoor zorgen dat de screenreader beter werkt.
 
 
   #### Muis en Toetsenbord 
@@ -213,7 +205,7 @@ Home pagina
   Lezen is wat moeilijker bij kleine lettertjes omdat je constant trilt en schud. 
 
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
-  Om de slider op te lossen kan je de functie snap doen, dat die snapt naar de volgende in plaats van dat je door kan sliden. Voor de lettertype kan je de lettertypes vergroten.
+  De oplossing rondom de kleine letters is om die kleine lettertjes gewoon te vergroten. En voor mensen met epilepsie of andere schokken is er een oplossing om in je css "prefers-reduced-motion" en dan functies met animaties wat afleidend is voor mensen met concentratie problemen en scroll met snap functie uit te zetten als de gebruiker dat heeft aan staan in zijn instellingen. 
 
 
   #### Visueel (brillen, contrast, kleurenblind, dark/light). 
@@ -231,7 +223,7 @@ Home pagina
   Hier een omschrijving van hoe het opgelost kan worden (met indien nodig afbeeldingen)
   Lettertypes vergroten en iets om bij te houden waar je bent gebleven is wel handig, alleen kom ik nog niet precies op wat ervoor zou kunnen doen.
 
-  De beste oplossing voor mensen die zichtbeperking hebben zijn screenreaders
+  De beste oplossing voor mensen die zichtbeperking hebben zijn screenreaders. Ik heb ook de lettertypes wat bolder en donkerder gemaakt zoals de h2's en de nav menu, die zijn bij het origineel lichter.
 
 </details>
 
@@ -245,29 +237,22 @@ Home pagina
   <summary>uitwerken voor 3e voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
-
+  Content is zo goed als compleet, er komt nu nog alleen herhalende onderdelen. Wel mist het javascript nog volledig, en hamburger menu en zoekbalk. En de keuze is gemaakt om uiteindelijk toch voor een surface plane te gaan.
 
   ### Agenda voor meeting
   samen met je groepje opstellen
-
-  | student 1      | student 2          | student 3    | student 4        |
-  | ---            | ---                | ---          | ---              |
-  | dit bespreken  | en dit             | en ik dit    | en dan ik dat    |
-  | en dat ook nog | dit als er tijd is | nog een punt | dit wil ik zeker |
-  | ...            | ...                | ...          | ...              |
+  NIET VAN TOEPASSING
 
 
   ### Verslag van meeting
   hier na afloop snel de uitkomsten van de meeting vastleggen
 
   - punt 1
+  Goed bezig, alleen nog het javascript gedeelte
   - punt 2
-  - nog een punt
-  - ...
+  Denk aan de Surface Plane
 
 </details>
-
 
 
 
@@ -277,24 +262,36 @@ Home pagina
 <details>
   <summary>uitwerken voor eindgesprek</summary>
 
-  ### Je uitkomst - karakteristiek screenshots:
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="uitomst opdracht 1">
+  ### Je uitkomst - karakteristiek screenshots: 
+  
+  <img src="readme-images/myhome.png" width="375px" alt=" Uiteindelijke Homepagine ">
 
+  <img src="readme-images/mymen.png" width="375px" alt=" Uiteindelijke Heren pagina">
+
+  Niet helemaal gelukte Hamburger menu
+  <img src="readme-images/hamburger.png" width="375"
+  alt="Uitkomst niet helemaal gelukte hamburger menu">
+  
 
   ### Dit ging goed/Heb ik geleerd: 
-  Korte omschrijving met plaatjes
+  Ik vond dit project/opdracht heel leuk om te doen, vooral door de hoeveelheid vrijheid en dat je echt een website mocht nabouwen die je zelf leuk vond. 
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="top">
+  Ik heb veel geleerd over de toegankelijkheid van websites en vond dit erg interessant. Ik ben na dit project ook het coderen een stuk leuker gaan vinden.
 
+  Kwa vormgeving is het me helemaal gelukt om mijn 2 pagina's te krijgen zoals ik wilde en van plan was, het mist alleen bepaalde functies die ik had willen toevoegen maar me niet gelukt is.
 
   ### Dit was lastig/Is niet gelukt:
-  Korte omschrijving met plaatjes
+  In verband met tekort aan tijd zijn wat dingen mij niet gelukt. Ik heb geprobeerd een hamburger menu werkent te maken maar dat is dus niet helemaal gelukt, hij werkt alleen vervangt het kruis van hamburgermenu sluiten niet de hamburger menu. Hier liep ik mee vast en kon er niet verder op ingaan ivm tekort aan tijd.
 
-  <img src="readme-images/dummy-plaatje.jpg" width="375px" alt="bummer">
+  Ook wilde ik dat als er op de searchglass drukte er een zoekbalk zou verschijnen en je daarin kon typen, maar dit is me niet gelukt, want ik liep vast bij het gedeelte van een zoekbalk laten verschijnen.
+
+  Voor de extra surface plane wilde ik de afbeeldingen bij topic een kwartslag laten draaien elk 2seconden.
+
+  Ook wilde ik nog audio toevoegen als surface plane, maar het lukte net niet, de code was goed maar al mijn zelfgemaakte en gedownloade audios konden niet worden geopend in Visual Studio Code, waardoor ik dit toch weg moest halen.
+
+  Ik had graag prefers-reduced-motion uitgebreider uitgewerkt, maar daarvoor had ik ook die animaties nodig die ik wilde doen op mijn website, dan kon ik dat uitzetten voor mensen met de voorkeur prefers-reduced-motion.
+
 </details>
-
-
-
 
 
 ## Bronnenlijst
@@ -304,8 +301,12 @@ Home pagina
 
   Nb. Wees specifiek ('css-tricks' als bron is bijv. niet specifiek genoeg).
 
-  1. bron 1
-  2. bron 2
-  3. ...
+  Bronnenlijst:
+  1. Studenassistent Nina heeft me vooral geholpen en de uitgelegd hoe je de scroll op home laat werken
+  2. Nina heeft me ook geholpen een stukje javascript te schrijven voor de footer, dat die niet bleeft plakken bij het scrollen op de homepagina, dus dat de overflow alleen werkt als de footer niet in beeld is.
+  3. https://codepen.io/shooft/pen/vYRjoxG (uitwerking van Sanne heeft me geholpen en de grid leren te begrijpen)
+  4. Bahaa heeft me geleerd hoe je kleurvakjes kon doen bij de recommandations bij herenpagina.
+  5. https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion hier heb ik van hoe je prefers-reduced-motion laat werken https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion
+  6. Isabel Kok heeft mij geholpen met de hamburger menu en de javascript code uitgelegd
 
 </details>
